@@ -1,0 +1,405 @@
+<events xmlns="http://xmlns.opennms.org/xsd/eventconf">
+   
+   <!-- ******************************************************** -->
+   <!--  AudioLoss trap RAISE ********************************** -->
+   <!-- ******************************************************** -->
+   
+   <event>
+      <mask>
+         <maskelement>
+            <mename>id</mename>
+            <mevalue>.1.3.6.1.4.1.42111.662.1</mevalue>
+         </maskelement>
+         <maskelement>
+            <mename>generic</mename>
+            <mevalue>6</mevalue>
+         </maskelement>
+         <maskelement>
+            <mename>specific</mename>
+            <mevalue>1</mevalue>
+         </maskelement>
+          <varbind>
+             <vbnumber>1</vbnumber>
+             <vbvalue>1</vbvalue>
+         </varbind>
+      </mask>
+      <uei>uei.opennms.org/traps/INOVONICS-MODEL662-MIB/audioLoss</uei>
+      <event-label>INOVONICS-MODEL662-MIB defined trap event: audioLoss raise</event-label>
+      <descr>
+&lt;p>This trap occurs if there is an audio loss alarm.&lt;/p>&lt;table>
+	&lt;tr>&lt;td>&lt;b>
+
+	audioLossAlarm&lt;/b>&lt;/td>&lt;td>
+	%parm[#1]%;&lt;/td>&lt;td>&lt;p>
+		off(0)
+		on(1)
+	&lt;/p>&lt;/td>&lt;/tr>&lt;/table>
+
+	</descr>
+      <logmsg dest="logndisplay">&lt;p>
+	audioLossTrap trap received
+	audioLossAlarm=%parm[#1]%&lt;/p>
+	</logmsg>
+      <severity>Warning</severity>
+      <varbindsdecode>
+         <parmid>parm[#1]</parmid>
+         <decode varbindvalue="0" varbinddecodedstring="off"/>
+         <decode varbindvalue="1" varbinddecodedstring="on"/>
+      </varbindsdecode>
+            <alarm-data reduction-key="%uei%:%dpname%:%nodeid%" alarm-type="1" auto-clean="false"/>
+   </event>
+
+   <!-- ******************************************************** -->
+   <!--  AudioLoss trap CLEAR ********************************** -->
+   <!-- ******************************************************** -->
+   
+   <event>
+      <mask>
+         <maskelement>
+            <mename>id</mename>
+            <mevalue>.1.3.6.1.4.1.42111.662.1</mevalue>
+         </maskelement>
+         <maskelement>
+            <mename>generic</mename>
+            <mevalue>6</mevalue>
+         </maskelement>
+         <maskelement>
+            <mename>specific</mename>
+            <mevalue>1</mevalue>
+         </maskelement>
+          <varbind>
+             <vbnumber>1</vbnumber>
+             <vbvalue>0</vbvalue>
+         </varbind>
+      </mask>
+      <uei>uei.opennms.org/traps/INOVONICS-MODEL662-MIB/audioLossClear</uei>
+      <event-label>INOVONICS-MODEL662-MIB defined trap event: audioLossClear</event-label>
+      <descr>
+&lt;p>This trap occurs if there is an audio loss alarm.&lt;/p>&lt;table>
+	&lt;tr>&lt;td>&lt;b>
+
+	audioLossAlarm&lt;/b>&lt;/td>&lt;td>
+	%parm[#1]%;&lt;/td>&lt;td>&lt;p>
+		off(0)
+		on(1)
+	&lt;/p>&lt;/td>&lt;/tr>&lt;/table>
+
+	</descr>
+      <logmsg dest="logndisplay">&lt;p>
+	audioLossTrap trap received
+	audioLossAlarm=%parm[#1]%&lt;/p>
+	</logmsg>
+      <severity>Cleared</severity>
+      <varbindsdecode>
+         <parmid>parm[#1]</parmid>
+         <decode varbindvalue="0" varbinddecodedstring="off"/>
+         <decode varbindvalue="1" varbinddecodedstring="on"/>
+      </varbindsdecode>
+            <alarm-data reduction-key="%uei%:%dpname%:%nodeid%" 
+                  alarm-type="2"
+                  clear-key="uei.opennms.org/traps/INOVONICS-MODEL662-MIB/audioLoss:%dpname%:%nodeid%" 
+                  auto-clean="false"/>
+   </event>
+
+   <!-- ******************************************************** -->
+   <!--  lowSignal trap RAISE ********************************** -->
+   <!-- ******************************************************** -->
+   
+   <event>
+      <mask>
+         <maskelement>
+            <mename>id</mename>
+            <mevalue>.1.3.6.1.4.1.42111.662.1</mevalue>
+         </maskelement>
+         <maskelement>
+            <mename>generic</mename>
+            <mevalue>6</mevalue>
+         </maskelement>
+         <maskelement>
+            <mename>specific</mename>
+            <mevalue>2</mevalue>
+         </maskelement>
+         <varbind>
+             <vbnumber>1</vbnumber>
+             <vbvalue>1</vbvalue>
+         </varbind>
+      </mask>
+      <uei>uei.opennms.org/traps/INOVONICS-MODEL662-MIB/lowSignal</uei>
+      <event-label>INOVONICS-MODEL662-MIB defined trap event: lowSignal raise</event-label>
+      <descr>
+&lt;p>This trap occurs if there is a low signal alarm.&lt;/p>&lt;table>
+	&lt;tr>&lt;td>&lt;b>
+
+	lowSignalAlarm&lt;/b>&lt;/td>&lt;td>
+	%parm[#1]%;&lt;/td>&lt;td>&lt;p>
+		off(0)
+		on(1)
+	&lt;/p>&lt;/td>&lt;/tr>&lt;/table>
+	</descr>
+      <logmsg dest="logndisplay">&lt;p>
+	lowSignalTrap trap received
+	lowSignalAlarm=%parm[#1]%&lt;/p>
+	</logmsg>
+      <severity>Warning</severity>
+      <varbindsdecode>
+         <parmid>parm[#1]</parmid>
+         <decode varbindvalue="0" varbinddecodedstring="off"/>
+         <decode varbindvalue="1" varbinddecodedstring="on"/>
+      </varbindsdecode>
+
+      <alarm-data reduction-key="%uei%:%dpname%:%nodeid%" alarm-type="1" auto-clean="false"/>
+   </event>
+
+   <!-- ******************************************************** -->
+   <!--  lowSignal trap CLEAR ********************************** -->
+   <!-- ******************************************************** -->
+   
+   <event>
+      <mask>
+         <maskelement>
+            <mename>id</mename>
+            <mevalue>.1.3.6.1.4.1.42111.662.1</mevalue>
+         </maskelement>
+         <maskelement>
+            <mename>generic</mename>
+            <mevalue>6</mevalue>
+         </maskelement>
+         <maskelement>
+            <mename>specific</mename>
+            <mevalue>2</mevalue>
+         </maskelement>
+         <varbind>
+             <vbnumber>1</vbnumber>
+             <vbvalue>0</vbvalue>
+         </varbind>
+      </mask>
+      <uei>uei.opennms.org/traps/INOVONICS-MODEL662-MIB/lowSignalClear</uei>
+      <event-label>INOVONICS-MODEL662-MIB defined trap event: lowSignal clear</event-label>
+      <descr>
+&lt;p>This trap occurs if there is a low signal alarm.&lt;/p>&lt;table>
+	&lt;tr>&lt;td>&lt;b>
+
+	lowSignalAlarm&lt;/b>&lt;/td>&lt;td>
+	%parm[#1]%;&lt;/td>&lt;td>&lt;p>
+		off(0)
+		on(1)
+	&lt;/p>&lt;/td>&lt;/tr>&lt;/table>
+	</descr>
+      <logmsg dest="logndisplay">&lt;p>
+	lowSignalTrap trap received
+	lowSignalAlarm=%parm[#1]%&lt;/p>
+	</logmsg>
+      <severity>Cleared</severity>
+      <varbindsdecode>
+         <parmid>parm[#1]</parmid>
+         <decode varbindvalue="0" varbinddecodedstring="off"/>
+         <decode varbindvalue="1" varbinddecodedstring="on"/>
+      </varbindsdecode>
+      
+      <alarm-data reduction-key="%uei%:%dpname%:%nodeid%" 
+            alarm-type="2" 
+            clear-key="uei.opennms.org/traps/INOVONICS-MODEL662-MIB/lowSignal:%dpname%:%nodeid%" 
+            auto-clean="false"/>
+   </event>
+
+   <!-- ******************************************************** -->
+   <!--  dabLoss trap RAISE ************************************ -->
+   <!-- ******************************************************** -->
+   
+   <event>
+      <mask>
+         <maskelement>
+            <mename>id</mename>
+            <mevalue>.1.3.6.1.4.1.42111.662.1</mevalue>
+         </maskelement>
+         <maskelement>
+            <mename>generic</mename>
+            <mevalue>6</mevalue>
+         </maskelement>
+         <maskelement>
+            <mename>specific</mename>
+            <mevalue>3</mevalue>
+         </maskelement>
+         <varbind>
+             <vbnumber>1</vbnumber>
+             <vbvalue>1</vbvalue>
+         </varbind>
+      </mask>
+      <uei>uei.opennms.org/traps/INOVONICS-MODEL662-MIB/dabLoss</uei>
+      <event-label>INOVONICS-MODEL662-MIB defined trap event: dabLoss raise</event-label>
+      <descr>
+&lt;p>This trap occurs if there is a DAB loss alarm.&lt;/p>&lt;table>
+	&lt;tr>&lt;td>&lt;b>
+
+	dabLossAlarm&lt;/b>&lt;/td>&lt;td>
+	%parm[#1]%;&lt;/td>&lt;td>&lt;p>
+		off(0)
+		on(1)
+	&lt;/p>&lt;/td>&lt;/tr>&lt;/table>
+	</descr>
+      <logmsg dest="logndisplay">&lt;p>
+	dabLossTrap trap received
+	dabLossAlarm=%parm[#1]%&lt;/p>
+	</logmsg>
+      <severity>Warning</severity>
+      <varbindsdecode>
+         <parmid>parm[#1]</parmid>
+         <decode varbindvalue="0" varbinddecodedstring="off"/>
+         <decode varbindvalue="1" varbinddecodedstring="on"/>
+      </varbindsdecode>
+         
+      <alarm-data reduction-key="%uei%:%dpname%:%nodeid%" alarm-type="1" auto-clean="false"/>
+   </event>
+
+   <!-- ******************************************************** -->
+   <!--  dabLoss trap CLEAR ************************************ -->
+   <!-- ******************************************************** -->
+   
+   <event>
+      <mask>
+         <maskelement>
+            <mename>id</mename>
+            <mevalue>.1.3.6.1.4.1.42111.662.1</mevalue>
+         </maskelement>
+         <maskelement>
+            <mename>generic</mename>
+            <mevalue>6</mevalue>
+         </maskelement>
+         <maskelement>
+            <mename>specific</mename>
+            <mevalue>3</mevalue>
+         </maskelement>
+         <varbind>
+             <vbnumber>1</vbnumber>
+             <vbvalue>0</vbvalue>
+         </varbind>
+      </mask>
+      <uei>uei.opennms.org/traps/INOVONICS-MODEL662-MIB/dabLossClear</uei>
+      <event-label>INOVONICS-MODEL662-MIB defined trap event: dabLoss clear</event-label>
+      <descr>
+&lt;p>This trap occurs if there is a DAB loss alarm.&lt;/p>&lt;table>
+	&lt;tr>&lt;td>&lt;b>
+
+	dabLossAlarm&lt;/b>&lt;/td>&lt;td>
+	%parm[#1]%;&lt;/td>&lt;td>&lt;p>
+		off(0)
+		on(1)
+	&lt;/p>&lt;/td>&lt;/tr>&lt;/table>
+	</descr>
+      <logmsg dest="logndisplay">&lt;p>
+	dabLossTrap trap received
+	dabLossAlarm=%parm[#1]%&lt;/p>
+	</logmsg>
+      <severity>Cleared</severity>
+      <varbindsdecode>
+         <parmid>parm[#1]</parmid>
+         <decode varbindvalue="0" varbinddecodedstring="off"/>
+         <decode varbindvalue="1" varbinddecodedstring="on"/>
+      </varbindsdecode>
+         
+      <alarm-data reduction-key="%uei%:%dpname%:%nodeid%" 
+            alarm-type="2"
+            clear-key="uei.opennms.org/traps/INOVONICS-MODEL662-MIB/dabLoss:%dpname%:%nodeid%" 
+            auto-clean="false"/>
+   </event>
+
+   <!-- ******************************************************** -->
+   <!--  dlsLoss trap RAISE ************************************ -->
+   <!-- ******************************************************** -->
+   
+   <event>
+      <mask>
+         <maskelement>
+            <mename>id</mename>
+            <mevalue>.1.3.6.1.4.1.42111.662.1</mevalue>
+         </maskelement>
+         <maskelement>
+            <mename>generic</mename>
+            <mevalue>6</mevalue>
+         </maskelement>
+         <maskelement>
+            <mename>specific</mename>
+            <mevalue>4</mevalue>
+         </maskelement>
+         <varbind>
+             <vbnumber>1</vbnumber>
+             <vbvalue>1</vbvalue>
+         </varbind>
+      </mask>
+      <uei>uei.opennms.org/traps/INOVONICS-MODEL662-MIB/dlsLoss</uei>
+      <event-label>INOVONICS-MODEL662-MIB defined trap event: dlsLoss raise</event-label>
+      <descr>
+&lt;p>This trap occurs if there is a DLS loss alarm.&lt;/p>&lt;table>
+	&lt;tr>&lt;td>&lt;b>
+
+	dlsLossAlarm&lt;/b>&lt;/td>&lt;td>
+	%parm[#1]%;&lt;/td>&lt;td>&lt;p>
+		off(0)
+		on(1)
+	&lt;/p>&lt;/td>&lt;/tr>&lt;/table>
+	</descr>
+      <logmsg dest="logndisplay">&lt;p>
+	dlsLossTrap trap received
+	dlsLossAlarm=%parm[#1]%&lt;/p>
+	</logmsg>
+      <severity>Warning</severity>
+      <varbindsdecode>
+         <parmid>parm[#1]</parmid>
+         <decode varbindvalue="0" varbinddecodedstring="off"/>
+         <decode varbindvalue="1" varbinddecodedstring="on"/>
+      </varbindsdecode>
+      <alarm-data reduction-key="%uei%:%dpname%:%nodeid%" alarm-type="1" auto-clean="false"/>
+   </event>
+
+   <!-- ******************************************************** -->
+   <!--  dlsLoss trap CLEAR ************************************ -->
+   <!-- ******************************************************** -->
+   
+   <event>
+      <mask>
+         <maskelement>
+            <mename>id</mename>
+            <mevalue>.1.3.6.1.4.1.42111.662.1</mevalue>
+         </maskelement>
+         <maskelement>
+            <mename>generic</mename>
+            <mevalue>6</mevalue>
+         </maskelement>
+         <maskelement>
+            <mename>specific</mename>
+            <mevalue>4</mevalue>
+         </maskelement>
+         <varbind>
+             <vbnumber>1</vbnumber>
+             <vbvalue>0</vbvalue>
+         </varbind>
+      </mask>
+      <uei>uei.opennms.org/traps/INOVONICS-MODEL662-MIB/dlsLossClear</uei>
+      <event-label>INOVONICS-MODEL662-MIB defined trap event: dlsLoss Clear</event-label>
+      <descr>
+&lt;p>This trap occurs if there is a DLS loss alarm.&lt;/p>&lt;table>
+	&lt;tr>&lt;td>&lt;b>
+
+	dlsLossAlarm&lt;/b>&lt;/td>&lt;td>
+	%parm[#1]%;&lt;/td>&lt;td>&lt;p>
+		off(0)
+		on(1)
+	&lt;/p>&lt;/td>&lt;/tr>&lt;/table>
+	</descr>
+      <logmsg dest="logndisplay">&lt;p>
+	dlsLossTrap trap received
+	dlsLossAlarm=%parm[#1]%&lt;/p>
+	</logmsg>
+      <severity>Cleared</severity>
+      <varbindsdecode>
+         <parmid>parm[#1]</parmid>
+         <decode varbindvalue="0" varbinddecodedstring="off"/>
+         <decode varbindvalue="1" varbinddecodedstring="on"/>
+      </varbindsdecode>
+         
+      <alarm-data reduction-key="%uei%:%dpname%:%nodeid%" 
+            alarm-type="2"
+            clear-key="uei.opennms.org/traps/INOVONICS-MODEL662-MIB/dlsLoss:%dpname%:%nodeid%" 
+            auto-clean="false"/>
+   </event>
+</events>
